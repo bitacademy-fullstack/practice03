@@ -16,8 +16,20 @@ public class GoodsApp {
 			int price = scanner.nextInt();
 			int countStock = scanner.nextInt();
 
+			Goods g = new Goods();
+			g.setName( name );
+			g.setPrice(price);
+			g.setCountStock(countStock);
+			goods[ i ] = g;
 		}
 
+		for( Goods g : goods ) {
+			System.out.println(
+				g.getName() + 
+				"(가격:" + g.getPrice() + "원)이 " +
+				g.getCountStock() + "개 입고 되었습니다.");
+		}
+		
 		// 자원정리
 		scanner.close();
 	}
